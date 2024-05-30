@@ -22,10 +22,10 @@ public class AuthenticationController : ControllerBase
             request.LastName, request.Email, request.Password);
 
         var response = new AuthenticarionResponse(
-            res.Id,
-            res.FirstName,
-            res.LastName,
-            res.Email,
+            res.User.Id,
+            res.User.FirstName,
+            res.User.LastName,
+            res.User.Email,
             res.Token);
 
         return Ok(response);
@@ -37,10 +37,10 @@ public class AuthenticationController : ControllerBase
         var res = _authenticationService.Login(request.Email, request.Password);
 
         var response = new AuthenticarionResponse(
-            res.Id,
-            res.FirstName,
-            res.LastName,
-            res.Email,
+            res.User.Id,
+            res.User.FirstName,
+            res.User.LastName,
+            res.User.Email,
             res.Token);
 
         return Ok(response);
